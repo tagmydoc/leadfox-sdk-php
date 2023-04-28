@@ -1,0 +1,13 @@
+{
+    "name": "tagmydoc/leadfox-sdk-php",
+    "description": "LeadFox PHP SDK",
+    "type": "library",
+    "require": {
+        "sammyjo20/saloon": "^2.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "TagMyDoc\\LeadFox\\": "src/"
+        }
+    }
+}
