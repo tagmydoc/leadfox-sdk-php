@@ -3,9 +3,11 @@
 namespace TagMyDoc\LeadFox\Requests;
 
 use Saloon\Contracts\Body\HasBody;
+use Saloon\Contracts\Response;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
 use Saloon\Traits\Body\HasJsonBody;
+use TagMyDoc\LeadFox\Responses\Contact;
 
 class UpsertContactRequest extends Request implements HasBody
 {
@@ -28,5 +30,10 @@ class UpsertContactRequest extends Request implements HasBody
             'email' => $this->email,
             ...$this->properties
         ];
+    }
+
+    public function createDtoFromResponse(Response $response): mixed
+    {
+        return Contact::fromResponse($response);
     }
 }

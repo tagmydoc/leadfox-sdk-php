@@ -5,6 +5,7 @@ namespace TagMyDoc\LeadFox;
 use Saloon\Contracts\Authenticator;
 use Saloon\Http\Connector;
 use Saloon\Traits\Plugins\AlwaysThrowOnErrors;
+use TagMyDoc\LeadFox\Resources\ContactResource;
 
 class LeadFoxClient extends Connector
 {
@@ -30,5 +31,10 @@ class LeadFoxClient extends Connector
             'Accept' => 'application/json',
             'Content-Type' => 'application/json',
         ];
+    }
+
+    public function contacts(): ContactResource
+    {
+        return new ContactResource($this);
     }
 }
