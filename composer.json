@@ -9,5 +9,6 @@
         "psr-4": {
             "TagMyDoc\\LeadFox\\": "src/"
         }
-    }
+    },
+    "license": "MIT"
 }
