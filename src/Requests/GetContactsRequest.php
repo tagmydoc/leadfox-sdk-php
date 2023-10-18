@@ -21,7 +21,7 @@ class GetContactsRequest extends Request
         $filters = [];
 
         if ($this->email) {
-            $filters[] = 'email = ' . rawurlencode($this->email);
+            $filters[] = "email = {$this->email}";
         }
 
         if (count($filters) > 0) {
